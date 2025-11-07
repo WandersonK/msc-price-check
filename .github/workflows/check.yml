@@ -5,6 +5,9 @@ on:
     - cron: "0 * * * *"   # roda de hora em hora (UTC)
   workflow_dispatch: {}    # permite rodar manualmente
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
