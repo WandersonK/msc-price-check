@@ -2,8 +2,8 @@ name: Monitorar preço MSC
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # roda de hora em hora (UTC)
-  workflow_dispatch: {}    # permite rodar manualmente
+    - cron: "*/30 * * * *"   # roda a cada 30 minutos
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -19,6 +19,24 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      # 🧩 Cache das dependências pip
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # 🧩 Cache do navegador Playwright (Chromium)
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
 
       - name: Instalar dependências
         run: |

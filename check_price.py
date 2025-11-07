@@ -54,7 +54,7 @@ def main():
         save_last(price)
         print("Novo preço detectado e salvo:", price)
     else:
-        msg = f'Sem alteração. Preço atual:, {price}'
+        msg = f'Sem alteração. Preço atual: {price}'
         send_telegram(msg)
         print("Sem alteração. Preço atual:", price)
 
