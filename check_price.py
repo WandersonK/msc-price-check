@@ -46,7 +46,6 @@ def save_last(price):
 
 def main():
     price = fetch_price()
-    print(price)
     last = load_last()
 
     if not last or last["price"] != price:
