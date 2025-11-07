@@ -28,7 +28,7 @@ def fetch_price():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto(URL)
-        page.wait_for_selector(SELECTOR, timeout=60000)
+        page.wait_for_selector(SELECTOR, timeout=100000)
         time.sleep(5)  # espera 5s adicionais
         price = page.locator(SELECTOR).first.text_content().strip()
         browser.close()
