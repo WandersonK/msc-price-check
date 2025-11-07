@@ -47,15 +47,15 @@ def save_last(price):
 def main():
     price = fetch_price()
     print(price)
-    # last = load_last()
+    last = load_last()
 
-    # if not last or last["price"] != price:
-    #     msg = f"💰 Preço alterado para {price}\n{URL}"
-    #     send_telegram(msg)
-    #     save_last(price)
-    #     print("Novo preço detectado e salvo:", price)
-    # else:
-    #     print("Sem alteração. Preço atual:", price)
+    if not last or last["price"] != price:
+        msg = f"💰 Preço alterado para {price}\n{URL}"
+        send_telegram(msg)
+        save_last(price)
+        print("Novo preço detectado e salvo:", price)
+    else:
+        print("Sem alteração. Preço atual:", price)
 
 if __name__ == "__main__":
     main()
