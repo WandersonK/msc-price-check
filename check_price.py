@@ -4,7 +4,7 @@ import json
 import os
 import requests
 
-URL = "https://www.msccruzeiros.com.br/Search%20Result?embkPort=SSZ&departureDateFrom=22%2F03%2F2026&departureDateTo=29%2F03%2F2026&passengers=2%7C0%7C0%7C0&page=1&ships=PR&nights=6%2C7#/"
+URL = "https://www.msccruzeiros.com.br/Search%20Result?departureDateFrom=29%2F10%2F2027&departureDateTo=29%2F10%2F2027&passengers=2%7C0%7C0%7C0&page=1&ships=DI&nights=13&embkPort=CVV&area=POS"
 # SELECTOR = ".itinerary-card-price__price"
 SELECTORS = [
     ".itinerary-card-price__price",  # seletor antigo
