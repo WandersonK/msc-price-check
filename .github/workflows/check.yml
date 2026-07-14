@@ -2,7 +2,7 @@ name: Monitorar preço MSC
 
 on:
   schedule:
-    - cron: "0 * * * *"   # roda a cada 1 hora
+    - cron: "17 * * * *"   # roda a cada 1 hora (minuto 17 para reduzir descarte em horário de pico)
   workflow_dispatch: {}
 
 permissions:
