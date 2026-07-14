@@ -2,7 +2,7 @@ name: Monitorar preço MSC
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # TESTE: a cada 5 min (mínimo do GitHub). Reverter para "17 * * * *" depois.
+    - cron: "17 * * * *"   # backup 1x/hora (gatilho principal é externo via workflow_dispatch)
   workflow_dispatch: {}
 
 permissions:
